@@ -1,2 +1,3 @@
-# noc3-code
-Code for the course Nature of Code 3 at Arcada polytechnic university
+# Nature of Code 3
+
+Code for the "Nature of Code 3"-course at Arcada polytechnic university.
