@@ -58,7 +58,9 @@ class App {
 
         int numberOfChipsDealt = 0;
         int numberOfLeftOverChips = this.config.totalNumberOfChips % numberOfPlayers;
-        int numberOfLeftOverChipsPerPlayer = (int) Math.ceil(numberOfPlayers / numberOfLeftOverChips);
+        int numberOfLeftOverChipsPerPlayer = numberOfLeftOverChips > 0
+                ? (int) Math.ceil(this.config.numberOfPlayers / numberOfLeftOverChips)
+                : 0;
         int numberOfChipsPerPlayer = this.config.totalNumberOfChips / numberOfPlayers;
         int numberOfChips;
 
