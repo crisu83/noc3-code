@@ -1,5 +1,7 @@
 package org.cniska.noc3;
 
+import com.sun.javaws.exceptions.InvalidArgumentException;
+
 /**
  * Represents a single player in a game of Poker.
  */
@@ -18,10 +20,10 @@ class Player implements Comparable<Player>, Cloneable {
      * @param numberOfChips The number of chips the player has
      */
     Player(String name, String club, int numberOfChips) {
-        this.name = name;
-        this.club = club;
-        this.numberOfChips = numberOfChips;
-        this.medal = null;
+        this.setName(name);
+        this.setClub(club);
+        this.setNumberOfChips(numberOfChips);
+        this.setMedal(null);
     }
 
     @Override
@@ -57,19 +59,31 @@ class Player implements Comparable<Player>, Cloneable {
         return numberOfChips;
     }
 
-    void setMedal(String medal) {
-        this.medal = medal;
+    private void setNumberOfChips(int numberOfChips) {
+        this.numberOfChips = numberOfChips;
     }
 
     String getMedal() {
         return medal;
     }
 
+    void setMedal(String medal) {
+        this.medal = medal;
+    }
+
     String getName() {
         return name;
     }
 
+    private void setName(String name) {
+        this.name = name.trim();
+    }
+
     String getClub() {
         return club;
+    }
+
+    private void setClub(String club) {
+        this.club = club.trim();
     }
 }

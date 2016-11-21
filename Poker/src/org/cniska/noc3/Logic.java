@@ -22,7 +22,7 @@ class Logic {
         // NOTE:
         // This is a bit overkill, but here we ensure that the chips are evenly distributed amongst the players
         // (instead of just assuming that the total number of chips is evenly dividable by the number of players).
-        // e.g. Wrong: 500 / 3 = 166, 166 x 3 = 498, Correct: 167, 167, 166 = 500
+        // e.g. Wrong: 500 / 3 = 166, 166 x 3 = 498; Correct: 167, 167, 166 = 500
         return (numberOfChipsDealt + maximumNumberOfChipsPerPlayer) <= totalNumberOfChips
                 ? maximumNumberOfChipsPerPlayer
                 : numberOfChipsPerPlayer;
@@ -36,6 +36,9 @@ class Logic {
      * @return Whether or not the total amount of chips the players have is correct
      */
     static boolean checkTotalNumberOfChipsForPlayers(Player[] players, int totalNumberOfChips) {
+        // d) 4p. Kontrollerar att summan av resultaten för en runda är 0, alltså att lika mycket förlorades som de(n)
+        // som vann och att summa för allas märken alltid är 500. Flera än en spelare kan vinna en runda.
+
         int totalNumberOfChipsForPlayers = 0;
 
         for (Player player : players) {
@@ -46,7 +49,7 @@ class Logic {
     }
 
     /**
-     * Checks that the given result is possible to the given player.
+     * Checks that the given player has enough chips left for blinds after applying the given result.
      *
      * @param roundNumber    The round number
      * @param numberOfRounds The number of rounds in the game
@@ -54,11 +57,11 @@ class Logic {
      * @param playerResult   The player's result
      * @return Whether or not the result is possible
      */
-    static boolean checkIsPlayerResultPossible(int roundNumber, int numberOfRounds, Player player, int playerResult) {
-        int numberOfChipsRequired = numberOfRounds - roundNumber;
+    static boolean checkThatPlayerHasEnoughChipsAfterApplyingResult(int roundNumber, int numberOfRounds, Player player, int playerResult) {
+        int numberOfChipsRequiredForBlinds = numberOfRounds - roundNumber;
         int numberOfChipsAfterApplyingResult = player.getNumberOfChips() + playerResult;
 
-        return numberOfChipsAfterApplyingResult >= numberOfChipsRequired;
+        return numberOfChipsAfterApplyingResult >= numberOfChipsRequiredForBlinds;
     }
 
     /**
