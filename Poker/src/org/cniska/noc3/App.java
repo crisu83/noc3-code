@@ -240,7 +240,6 @@ class App {
 
         UI.outputHeading("Slutresultatet");
         this.outputPlayers(this.players);
-        UI.outputDivider();
 
         // g) 4p. Sortera listan och skriv ut de tre första i ordning med en ”medalj” tilldelad. Observera att en medalj
         // kan delas (två kan vinna guld i vilket fall ingen får silver).
