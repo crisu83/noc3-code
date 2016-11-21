@@ -153,7 +153,7 @@ class App {
                 answer = Integer.parseInt(this.askQuestion(question));
                 isAnswerAnInteger = true;
             } catch (NumberFormatException exception) {
-                // If we get here, we know that the user did not input a number, so we will ask the question again.
+                // If we get here, we know that the user did not input an integer, so we will ask the question again.
                 UI.outputError("Du måste ge ett heltal!");
             }
         }
