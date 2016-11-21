@@ -5,7 +5,7 @@ package org.cniska.noc3;
  */
 class Config {
     // Adjust these values if necessary.
-    int numberOfPlayers = 3;
-    int numberOfRounds = 2;
+    int numberOfPlayers = 5;
+    int numberOfRounds = 20;
     int totalNumberOfChips = 500;
 }
