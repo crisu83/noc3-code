@@ -1,4 +1,4 @@
-package org.cniska.noc3;
+package org.cniska.noc3.poker;
 
 /**
  * Utilities used by the application.

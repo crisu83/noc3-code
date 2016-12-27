@@ -1,4 +1,4 @@
-package org.cniska.noc3;
+package org.cniska.noc3.poker;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,6 +1,4 @@
-package org.cniska.noc3;
-
-import com.sun.javaws.exceptions.InvalidArgumentException;
+package org.cniska.noc3.poker;
 
 /**
  * Represents a single player in a game of Poker.

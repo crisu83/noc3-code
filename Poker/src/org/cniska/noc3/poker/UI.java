@@ -1,4 +1,4 @@
-package org.cniska.noc3;
+package org.cniska.noc3.poker;
 
 /**
  * User interface logic for the application.
